@@ -33,13 +33,17 @@ IMDb after adding the movie to the selected profile:
 
 ![IMDb title page with the green In Nuvio button](screenshots/screen-imdb-2.jpg)
 
-Letterboxd before adding a movie:
+Letterboxd:
 
 ![Letterboxd film page with the Add to Nuvio button](screenshots/screen-letterboxd-1.jpg)
 
-Letterboxd after adding the movie to the selected profile:
+Rotten Tomatoes:
 
-![Letterboxd film page with the In Nuvio button](screenshots/screen-letterboxd-2.jpg)
+![Rotten Tomatoes film page with the Add to Nuvio button](screenshots/screen-rottentomatoes-1.jpg)
+
+TMDB:
+
+![TMDB film page with the Add to Nuvio button](screenshots/screen-tmdb-1.jpg)
 
 ## Install from source
 
