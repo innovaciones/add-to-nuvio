@@ -1,0 +1,151 @@
+#nuvio-rt-row {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: stretch;
+  width: min(260px, calc(100% - 16px));
+  min-height: 60px;
+  margin: 0 0 14px;
+  border: 1px solid #d5d9dc;
+  border-radius: 6px;
+  background: #fff;
+  color: #2a2c32;
+  font-family: "Franklin Gothic", -apple-system, system-ui, "PT Sans", Arial, sans-serif;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .08);
+}
+#nuvio-rt-row button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: none !important;
+  cursor: pointer;
+}
+#nuvio-rt-row .nuvio-rt-main {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1 1 auto;
+  gap: 8px;
+  min-width: 0;
+  min-height: 58px;
+  margin: 0;
+  padding: 9px 12px;
+  text-align: left;
+}
+#nuvio-rt-row .nuvio-rt-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  object-fit: contain;
+}
+#nuvio-rt-row .nuvio-rt-lines {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  width: 0;
+  min-width: 0;
+  text-align: left;
+  text-transform: none !important;
+}
+#nuvio-rt-row .nuvio-rt-label {
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  color: #2a2c32;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+#nuvio-rt-row .nuvio-rt-subtitle {
+  display: block;
+  overflow: hidden;
+  max-width: 100%;
+  color: #687178;
+  font-size: 12px;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  text-transform: none !important;
+  white-space: nowrap;
+}
+#nuvio-rt-row .nuvio-rt-profile {
+  flex: 0 0 36px;
+  margin: 9px 0;
+  padding: 0;
+  border-left: 1px solid #d5d9dc;
+  font-size: 19px;
+  line-height: 20px;
+}
+#nuvio-rt-row .nuvio-rt-main:hover .nuvio-rt-label,
+#nuvio-rt-row .nuvio-rt-profile:hover { color: #2f6dd8; }
+#nuvio-rt-row.nuvio-added { border-color: #77b96d; background: #effbec; }
+#nuvio-rt-row.nuvio-added .nuvio-rt-label { color: #257d31; }
+#nuvio-rt-row.nuvio-loading { opacity: .72; }
+#nuvio-rt-row.nuvio-error .nuvio-rt-label { color: #bb332a; }
+#nuvio-rt-row button:disabled { cursor: wait; }
+#nuvio-rt-row button:focus-visible,
+#nuvio-rt-menu button:focus-visible { outline: 2px solid #2f6dd8; outline-offset: 2px; }
+@keyframes nuvio-rt-spin { to { transform: rotate(360deg); } }
+#nuvio-rt-menu {
+  position: fixed;
+  z-index: 999999;
+  display: none;
+  box-sizing: border-box;
+  width: 210px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 16px);
+  overflow: auto;
+  padding: 5px 0;
+  border: 1px solid #d5d9dc;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+  color: #2a2c32;
+  font: 13px/18px "Franklin Gothic", -apple-system, system-ui, "PT Sans", Arial, sans-serif;
+}
+#nuvio-rt-menu.open { display: block; }
+#nuvio-rt-menu .heading {
+  padding: 7px 12px;
+  color: #687178;
+  font-size: 11px;
+  text-transform: none;
+  letter-spacing: .05em;
+}
+#nuvio-rt-menu button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  text-transform: none !important;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#nuvio-rt-menu button:hover,
+#nuvio-rt-menu button.active { background: #f1f3f5; }
+#nuvio-rt-toast {
+  position: fixed;
+  z-index: 999999;
+  box-sizing: border-box;
+  max-width: min(280px, calc(100vw - 16px));
+  padding: 9px 12px;
+  border: 1px solid #d5d9dc;
+  border-radius: 6px;
+  background: #fff;
+  color: #2a2c32;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .18);
+  font: 13px/18px "Franklin Gothic", -apple-system, system-ui, "PT Sans", Arial, sans-serif;
+}
+#nuvio-rt-toast.failed { border-color: #bb332a; }

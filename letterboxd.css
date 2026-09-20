@@ -1,0 +1,126 @@
+#nuvio-letterboxd-row {
+  position: relative;
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  min-height: 58px;
+  margin: 0 !important;
+  padding: 7px 8px 7px 10px !important;
+  border-bottom: 1px solid #303840;
+  background: #14181c;
+  color: #9ab;
+  font: 12px/16px GraphikWeb, -apple-system, system-ui, "Segoe UI", sans-serif;
+}
+#nuvio-letterboxd-row button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+#nuvio-letterboxd-row .nuvio-main {
+  display: flex;
+  align-items: center;
+  flex: 1 1 auto;
+  gap: 9px;
+  min-width: 0;
+  padding: 2px 0;
+  text-align: left;
+}
+#nuvio-letterboxd-row .nuvio-icon {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+  object-fit: contain;
+}
+#nuvio-letterboxd-row .nuvio-lines { display: flex; flex-direction: column; min-width: 0; }
+#nuvio-letterboxd-row .nuvio-label {
+  color: #d8e0e8;
+  font-size: 12px;
+  line-height: 17px;
+  font-weight: 600;
+}
+#nuvio-letterboxd-row .nuvio-subtitle {
+  color: #9ab;
+  font-size: 11px;
+  line-height: 15px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#nuvio-letterboxd-row .nuvio-profile {
+  flex: 0 0 30px;
+  margin: 6px 0 6px 4px;
+  padding: 0;
+  border-left: 1px solid #303840;
+  color: #9ab;
+  font-size: 17px;
+}
+#nuvio-letterboxd-row .nuvio-main:hover .nuvio-label,
+#nuvio-letterboxd-row .nuvio-profile:hover { color: #fff; }
+#nuvio-letterboxd-row.nuvio-added {
+  background: rgba(135, 232, 114, .10);
+}
+#nuvio-letterboxd-row.nuvio-added .nuvio-label { color: #87e872; }
+#nuvio-letterboxd-row.nuvio-loading { opacity: .72; }
+#nuvio-letterboxd-row.nuvio-error .nuvio-label { color: #ff8d85; }
+#nuvio-letterboxd-row button:disabled { cursor: wait; }
+#nuvio-letterboxd-row button:focus-visible,
+#nuvio-letterboxd-menu button:focus-visible { outline: 2px solid #40bcf4; outline-offset: 2px; }
+@keyframes nuvio-letterboxd-spin { to { transform: rotate(360deg); } }
+#nuvio-letterboxd-menu {
+  position: fixed;
+  z-index: 999999;
+  display: none;
+  box-sizing: border-box;
+  width: 190px;
+  max-width: calc(100vw - 16px);
+  overflow: hidden;
+  padding: 5px 0;
+  border: 1px solid #303840;
+  border-radius: 4px;
+  background: #20272e;
+  box-shadow: 0 8px 24px rgba(0,0,0,.45);
+  color: #d8e0e8;
+  font: 12px/18px GraphikWeb, -apple-system, system-ui, "Segoe UI", sans-serif;
+}
+#nuvio-letterboxd-menu.open { display: block; }
+#nuvio-letterboxd-menu .heading {
+  padding: 6px 12px;
+  color: #9ab;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+}
+#nuvio-letterboxd-menu button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  padding: 8px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#nuvio-letterboxd-menu button:hover,
+#nuvio-letterboxd-menu button.active { background: #303c48; }
+#nuvio-letterboxd-toast {
+  position: fixed;
+  z-index: 999999;
+  max-width: 300px;
+  padding: 9px 12px;
+  border: 1px solid #3f5464;
+  border-radius: 4px;
+  background: #20272e;
+  color: #e5edf4;
+  box-shadow: 0 6px 18px rgba(0,0,0,.4);
+  font: 12px/18px GraphikWeb, -apple-system, system-ui, "Segoe UI", sans-serif;
+}

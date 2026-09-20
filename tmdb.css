@@ -1,0 +1,155 @@
+#original_header .poster_wrapper:has(> #nuvio-tmdb-row) {
+  height: auto !important;
+}
+
+#nuvio-tmdb-row {
+  box-sizing: border-box;
+  display: flex !important;
+  align-items: stretch;
+  width: 100%;
+  min-height: 62px;
+  margin-top: 8px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 8px;
+  background: #032541;
+  color: #fff;
+  font: 14px/18px "Source Sans Pro", Arial, sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, .18);
+}
+#nuvio-tmdb-row button {
+  appearance: none;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-transform: none !important;
+  cursor: pointer;
+}
+#nuvio-tmdb-row .nuvio-tmdb-main {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
+  flex: 1 1 auto;
+  gap: 9px;
+  min-width: 0;
+  margin: 0;
+  padding: 9px 12px;
+  text-align: left;
+}
+#nuvio-tmdb-row .nuvio-tmdb-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 28px;
+  object-fit: contain;
+}
+#nuvio-tmdb-row .nuvio-tmdb-lines {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  min-width: 0;
+  text-align: left;
+}
+#nuvio-tmdb-row .nuvio-tmdb-label {
+  overflow: hidden;
+  max-width: 100%;
+  color: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 18px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#nuvio-tmdb-row .nuvio-tmdb-subtitle {
+  overflow: hidden;
+  max-width: 100%;
+  color: #bdcdd9;
+  font-size: 12px;
+  line-height: 16px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#nuvio-tmdb-row .nuvio-tmdb-profile {
+  flex: 0 0 38px;
+  margin: 9px 0;
+  padding: 0;
+  border-left: 1px solid rgba(255, 255, 255, .28);
+  font-size: 20px;
+  line-height: 20px;
+}
+#nuvio-tmdb-row .nuvio-tmdb-main:hover .nuvio-tmdb-label,
+#nuvio-tmdb-row .nuvio-tmdb-profile:hover { color: #90d8ed; }
+#nuvio-tmdb-row.nuvio-added {
+  border-color: #1ed5a9;
+  background: linear-gradient(90deg, #1ed5a9, #01b4e4);
+  color: #032541;
+}
+#nuvio-tmdb-row.nuvio-added .nuvio-tmdb-subtitle { color: #123e53; }
+#nuvio-tmdb-row.nuvio-added .nuvio-tmdb-profile { border-left-color: rgba(3, 37, 65, .28); }
+#nuvio-tmdb-row.nuvio-added .nuvio-tmdb-main:hover .nuvio-tmdb-label,
+#nuvio-tmdb-row.nuvio-added .nuvio-tmdb-profile:hover { color: #00445c; }
+#nuvio-tmdb-row.nuvio-loading { opacity: .75; }
+#nuvio-tmdb-row.nuvio-error { border-color: #ff8d85; }
+#nuvio-tmdb-row.nuvio-error .nuvio-tmdb-label { color: #ffb3ae; }
+#nuvio-tmdb-row button:disabled { cursor: wait; }
+#nuvio-tmdb-row button:focus-visible,
+#nuvio-tmdb-menu button:focus-visible { outline: 2px solid #01b4e4; outline-offset: 2px; }
+@keyframes nuvio-tmdb-spin { to { transform: rotate(360deg); } }
+#nuvio-tmdb-menu {
+  position: fixed;
+  z-index: 999999;
+  display: none;
+  box-sizing: border-box;
+  width: 220px;
+  max-width: calc(100vw - 16px);
+  max-height: calc(100vh - 16px);
+  overflow: auto;
+  padding: 5px 0;
+  border: 1px solid #cbd7df;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  color: #032541;
+  font: 14px/18px "Source Sans Pro", Arial, sans-serif;
+}
+#nuvio-tmdb-menu.open { display: block; }
+#nuvio-tmdb-menu .heading {
+  padding: 7px 12px;
+  color: #587181;
+  font-size: 12px;
+  letter-spacing: .02em;
+}
+#nuvio-tmdb-menu button {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 9px 12px;
+  border: 0;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  font: inherit;
+  text-transform: none !important;
+  cursor: pointer;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+#nuvio-tmdb-menu button:hover,
+#nuvio-tmdb-menu button.active { background: #e8f6fa; }
+#nuvio-tmdb-toast {
+  position: fixed;
+  z-index: 999999;
+  box-sizing: border-box;
+  max-width: min(280px, calc(100vw - 16px));
+  padding: 9px 12px;
+  border: 1px solid #01b4e4;
+  border-radius: 8px;
+  background: #032541;
+  color: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, .25);
+  font: 13px/18px "Source Sans Pro", Arial, sans-serif;
+}
+#nuvio-tmdb-toast.failed { border-color: #ff8d85; }

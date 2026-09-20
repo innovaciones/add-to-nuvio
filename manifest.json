@@ -1,0 +1,62 @@
+{
+  "manifest_version": 3,
+  "name": "Add to Nuvio",
+  "version": "1.4.2",
+  "description": "Add or remove titles in your Nuvio library from IMDb, Letterboxd, Rotten Tomatoes and TMDB.",
+  "icons": {
+    "16": "icons/add-icon-16.png",
+    "32": "icons/add-icon-32.png",
+    "48": "icons/add-icon-48.png",
+    "128": "icons/add-icon-128.png"
+  },
+  "action": {
+    "default_title": "Add to Nuvio",
+    "default_icon": {
+      "16": "icons/add-icon-16.png",
+      "32": "icons/add-icon-32.png"
+    }
+  },
+  "permissions": ["storage"],
+  "host_permissions": [
+    "https://api.nuvio.tv/*",
+    "https://catalog.nuvio.tv/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["icons/nuvio.png"],
+      "matches": ["https://*.imdb.com/*", "https://letterboxd.com/*", "https://www.letterboxd.com/*", "https://rottentomatoes.com/*", "https://www.rottentomatoes.com/*", "https://themoviedb.org/*", "https://www.themoviedb.org/*"]
+    }
+  ],
+  "background": { "service_worker": "background.js" },
+  "content_scripts": [
+    {
+      "matches": ["https://*.imdb.com/*"],
+      "js": ["imdb.js"],
+      "css": ["imdb.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://letterboxd.com/film/*", "https://www.letterboxd.com/film/*"],
+      "js": ["letterboxd.js"],
+      "css": ["letterboxd.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://rottentomatoes.com/m/*", "https://www.rottentomatoes.com/m/*", "https://rottentomatoes.com/tv/*", "https://www.rottentomatoes.com/tv/*"],
+      "js": ["rottentomatoes.js"],
+      "css": ["rottentomatoes.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://themoviedb.org/movie/*", "https://www.themoviedb.org/movie/*", "https://themoviedb.org/tv/*", "https://www.themoviedb.org/tv/*"],
+      "js": ["tmdb.js"],
+      "css": ["tmdb.css"],
+      "run_at": "document_idle"
+    },
+    {
+      "matches": ["https://nuvio.tv/*", "https://www.nuvio.tv/*"],
+      "js": ["nuvio.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
